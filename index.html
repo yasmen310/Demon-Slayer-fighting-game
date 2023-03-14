@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- big Container -->
+    <div style="position: relative; display: inline-block">
+      <!-- small Container -->
+      <div
+        style="
+          position: absolute;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          padding: 20px;
+        "
+      >
+        <!-- playerHealth -->
+        <div
+          style="
+            position: relative;
+            height: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+          "
+        >
+          <div
+            style="
+              background-color: rgba(214, 1, 1, 0.48);
+              height: 20px;
+              width: 100%;
+              border-radius: 8px;
+            "
+          ></div>
+          <div
+            id="playerHealth"
+            style="
+              position: absolute;
+              background-color: blue;
+              top: 0;
+              right: 0;
+              /* left: 0; */
+              bottom: 0;
+              width: 100%;
+              border-radius: 8px;
+            "
+          ></div>
+        </div>
+        <!-- Timer -->
+        <div
+          id="timer"
+          style="
+            background-color: rgba(23, 126, 90, 0.48);
+            width: 100px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin: 4px;
+            font-size: 42px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+              sans-serif;
+            font-weight: 900;
+            color: aliceblue;
+            border-radius: 25%;
+          "
+        >
+          100
+        </div>
+        <!-- Enemy Health -->
+
+        <div style="position: relative; height: 20px; width: 100%">
+          <div
+            style="
+              background-color: rgba(214, 1, 1, 0.48);
+              height: 20px;
+              border-radius: 8px;
+            "
+          ></div>
+          <div
+            id="enemyHealth"
+            style="
+              position: absolute;
+              background-color: blue;
+              top: 0;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              border-radius: 8px;
+            "
+          ></div>
+        </div>
+      </div>
+      <div
+        id="resultOfGame"
+        style="
+          position: absolute;
+          color: aliceblue;
+          margin: 4px;
+          font-size: 42px;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+          font-weight: 900;
+          color: aliceblue;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: none;
+        "
+      >
+        Tie
+      </div>
+      <canvas></canvas>
+    </div>
+    <script src="./js/utls.js"></script>
+    <script src="./js/classes.js "></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

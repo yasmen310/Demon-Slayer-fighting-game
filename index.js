@@ -136,8 +136,8 @@ const player1 = new Fighter({
   },
   attackBox: {
     offset: {
-      x: 110,
-      y: 90,
+      x: 0,
+      y: 80,
     },
     width: 100,
     height: 30,
@@ -231,9 +231,9 @@ const enmy = new Fighter({
   attackBox: {
     offset: {
       x: 0,
-      y: 80,
+      y: 90,
     },
-    width: 100,
+    width: 90,
     height: 30,
   },
 });
@@ -252,6 +252,20 @@ function animate() {
 
   player1.velocity.x = 0;
   enmy.velocity.x = 0;
+
+  if (player1.possition.x < -100) {
+    player1.possition.x = 960;
+  }
+  if (player1.possition.x >= 1000) {
+    player1.possition.x = 0;
+  }
+
+  if (enmy.possition.x < -100) {
+    enmy.possition.x = 960;
+  }
+  if (enmy.possition.x >= 1000) {
+    enmy.possition.x = 0;
+  }
 
   //jumping
 

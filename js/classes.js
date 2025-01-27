@@ -1,3 +1,4 @@
+// Class representing a generic sprite
 class Sprite {
   constructor({
     possition,
@@ -18,7 +19,7 @@ class Sprite {
     this.framesHold = 5;
     this.offset = offset;
   }
-
+ // Method to draw the sprite on the canvas
   drow() {
     ctx.drawImage(
       this.img,
@@ -32,7 +33,7 @@ class Sprite {
       this.img.height * this.scale
     );
   }
-
+  // Method to animate frames by switching to the next frame
   animateFrames() {
     this.framesElapsed++; // frames done
     if (this.framesElapsed % this.framesHold == 0) {
@@ -41,13 +42,13 @@ class Sprite {
       } else this.currentFrame = 0;
     }
   }
-
+  // Update method to draw and animate the sprite
   update() {
     this.drow();
     this.animateFrames();
   }
 }
-
+// Class representing a fighter, extending the Sprite class
 class Fighter extends Sprite {
   constructor({
     possition,
@@ -113,6 +114,7 @@ class Fighter extends Sprite {
   //   }
   // }
 
+    // Method to handle getting hit
   getHit() {
     this.health -= 20;
     if (this.health <= 0) {
@@ -123,6 +125,7 @@ class Fighter extends Sprite {
     // this.isAttacking = true;
   }
 
+  // Update method to draw, animate and update fighter state
   update() {
     this.drow();
     if (!this.dead) this.animateFrames();
@@ -153,6 +156,8 @@ class Fighter extends Sprite {
     // console.log("done");
   }
 
+
+  // Method to handle fighter attacks
   attack(num) {
     switch (num) {
       case "1":
@@ -175,6 +180,7 @@ class Fighter extends Sprite {
     //   this.isAttacking = false;
     // }, 1000);
   }
+  // Method to switch between different sprite states
   switchSprite(sprite) {
     if (this.img === this.sprites.death.img) {
       if (this.currentFrame === this.sprites.death.framesMax - 1) {
@@ -209,6 +215,7 @@ class Fighter extends Sprite {
     )
       return;
 
+       // Switch to the appropriate sprite
     switch (sprite) {
       case "idle":
         if (this.img !== this.sprites.idle.img) {
